@@ -22,12 +22,12 @@ window.onscroll = () => {
             // active navbar links
             navLinks.forEach(links => {
                 links.classList.remove('active');
+                document.querySelector('header nav a[href="#' + id + '"]').classList.add('active');
             });
-            document.querySelector('header nav a[href="#' + id + '"]').classList.add('active');
-
-            // active sections for animation on scroll
+                // active sections for animation on scroll
             sec.classList.add('show-animate');
-        } else {
+        } 
+        else {
             sec.classList.remove('show-animate');
         }
     });
@@ -41,4 +41,7 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 
     // animation footer on scroll
-}
+    let footer = document.querySelector('footer');
+
+    footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);    
+  }
