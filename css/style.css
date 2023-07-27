@@ -84,16 +84,16 @@ section {
 
 .home {
     display: flex;
-    align-items: center;
+    align-items: relative;
     padding: 0 9%;
     background: url('/Images/hover.png') no-repeat;
-    background-size: cover;
+    background-size:cover;
     background-position: center;
 }
 
 .home-content {
     max-width: 60rem ;
-    z-index: 99;
+    z-index: 2;
 }
 
 .home-content h1 {
@@ -278,13 +278,14 @@ width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:2rem;
+    gap: 2rem;
     background: var(--second-bg-color);
-    padding-bottom: 6rep;
+    padding-bottom: 6rem;
 }
 
 .heading {
     position: relative;
+    display: inline-block;
     font-size: 5rem;
     margin-bottom: 3rem;
     text-align: center;
@@ -337,6 +338,7 @@ span {
 }
 
 .about-content p {
+    position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
 }
@@ -366,6 +368,8 @@ span {
 }
 
 .education-column .title {
+    position: relative;
+    display: inline-block;
     font-size: 2.5rem;
     margin: 0 0 1.5rem 2rem;
 }
@@ -377,6 +381,7 @@ span {
 
 
 .education-column .education-box {
+    position: relative;
     border-left: .2rem solid var(--main-color);
     }
 
@@ -452,6 +457,12 @@ span {
     background: var(--second-bg-color);
 }
 
+.skills h2 {
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .skills .skills-row {
     display: flex;
     flex-wrap: wrap;
@@ -463,8 +474,14 @@ span {
 }
 
 .skills-column .title {
+    position: relative;
+    display: inline-block;
     font-size: 2.5rem;
     margin: 0 0 1.5rem ;
+}
+
+.skills-column .skills-box {
+    position: relative;
 }
 
 .skills-box .skills-content {
@@ -691,7 +708,7 @@ span {
 
   }
 
-  .animate.home-ing{
+  .animate.home-img{
     width: 50%;
   }
 
@@ -709,7 +726,14 @@ span {
     animation: none;
   }
 
-  .about.show-animate .animate.scroll {
+  .education .education-box .animate.scroll {
+    width: 105%;
+  }
+
+  .about.show-animate .animate.scroll,
+  .education.show-animate .animate.scroll,
+  .skills.show-animate .animate.scroll
+   {
     transition-delay: calc(.3s * var(--i));
     width: 0;
   }
@@ -721,7 +745,7 @@ span {
     }
   }
 
-  @media (max-widht: 991px) {
+  @media (max-width: 991px) {
     .header {
         padding: 2rem 4%;
     }
